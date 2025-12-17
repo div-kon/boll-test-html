@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boll OTF vs TTF Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="waterfall"></div>
+
+<script>
+const sizes = [
+  72,60,48,36,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,
+  15,14,13,12,11,10,9,8
+];
+
+const charset = ` ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`;
+
+const container = document.getElementById('waterfall');
+
+sizes.forEach(size => {
+  // OTF line
+  const otfLine = document.createElement('div');
+  otfLine.className = 'line otf';
+  otfLine.style.fontSize = size + 'px';
+  otfLine.textContent = size + 'px (OTF): ' + charset;
+  container.appendChild(otfLine);
+
+  // TTF line
+  const ttfLine = document.createElement('div');
+  ttfLine.className = 'line ttf';
+  ttfLine.style.fontSize = size + 'px';
+  ttfLine.textContent = size + 'px (TTF): ' + charset;
+  container.appendChild(ttfLine);
+});
+
+// Add 20 empty lines at the bottom
+for (let i = 0; i < 20; i++) {
+  const empty = document.createElement('div');
+  empty.className = 'line empty';
+  empty.innerHTML = '&nbsp;';
+  container.appendChild(empty);
+}
+</script>
+
+</body>
+</html>

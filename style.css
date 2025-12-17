@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Boll-OTF";
+  src: url("Boll-OTF-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Boll-TTF";
+  src: url("Boll-TTF-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+body {
+  margin: 12px;
+  background: white;
+}
+
+.line {
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.line.otf {
+  font-family: "Boll-OTF", sans-serif;
+}
+
+.line.ttf {
+  font-family: "Boll-TTF", sans-serif;
+}
+
+.line.empty {
+  height: 1.5em;
+}
